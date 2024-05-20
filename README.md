@@ -18,10 +18,10 @@ Live Preview will be integrated here -
 
 #### TODO:
 
-[ ] - Integrate TDD for fetching data to the `weather api`.
-[ ] - Integrate TDD for any utility functions the APP may need.
-[ ] - Basic skeleton site using HTML.
-[ ] - Flesh out skeleton site using JS/TS.
-[ ] - Merge TDD fetching into site.
+- [ ]  Integrate TDD for fetching data to the `weather api`.
+- [ ]  Integrate TDD for any utility functions the APP may need.
+- [ ]  Basic skeleton site using HTML.
+- [ ]  Flesh out skeleton site using JS/TS.
+- [ ]  Merge TDD fetching into site.
 
 #### Run locally
