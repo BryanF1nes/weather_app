@@ -5,8 +5,8 @@ export async function fetchCurrentData(search = "London") {
       `${process.env.BASE_URL}current.json?key=${key}&q=${search}&aqi=no`
     );
     const data = await response.json();
-    console.log(data.location);
-    // return data;
+    console.log(data.current);
+    return data;
   } catch (err) {
     throw new Error(err);
   }

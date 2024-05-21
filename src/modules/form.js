@@ -1,4 +1,5 @@
 import { fetchCurrentData } from "../utils/fetch.js";
+import { showData } from "./showData.js";
 
 export const createForm = () => {
   const form = document.createElement("form");
@@ -6,7 +7,8 @@ export const createForm = () => {
   const button = document.createElement("button");
 
   input.setAttribute("placeholder", "Enter a location");
-  button.textContent = "Submit";
+  input.setAttribute("required", "");
+  button.textContent = "Send";
 
   form.appendChild(input);
   form.appendChild(button);
@@ -17,9 +19,13 @@ export const createForm = () => {
 export const formEventHandler = () => {
   const form = document.querySelector("form");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const search = e.target.firstChild.value;
-    fetchCurrentData(search);
+    if (!search) {
+      return fetchCurrentData();
+    }
+    const data = await fetchCurrentData(search);
+    return await showData(data);
   });
 };
