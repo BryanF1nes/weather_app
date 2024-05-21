@@ -1,3 +1,4 @@
+import { currentDate } from "../src/utils/currentDate";
 import { fetchCurrentData, fetchForecastData } from "../src/utils/fetch";
 
 test("Does fetch exist", () => {
@@ -20,5 +21,5 @@ test("Does fetch forecast exist", () => {
 
 test("Does fetch forecast retrieve forecast data", async () => {
   const data = await fetchForecastData("Virginia", 3);
-  expect(data.forecast.forecastday[0].date).toMatch("2024-05-21");
+  expect(data.forecast.forecastday[0].date).toMatch(currentDate);
 });

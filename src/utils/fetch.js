@@ -1,13 +1,12 @@
-import "dotenv/config";
-
 export async function fetchCurrentData(search = "London") {
   try {
     const key = process.env.API_KEY;
     const response = await fetch(
       `${process.env.BASE_URL}current.json?key=${key}&q=${search}&aqi=no`
     );
-    const data = response.json();
-    return data;
+    const data = await response.json();
+    console.log(data.location);
+    // return data;
   } catch (err) {
     throw new Error(err);
   }

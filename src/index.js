@@ -1,3 +1,10 @@
 import "./style.css";
+import { createForm, formEventHandler } from "./modules/form.js";
 
-const root = document.querySelector("#root");
+export const root = document.querySelector("#root");
+
+root.appendChild(createForm());
+
+(function init() {
+  formEventHandler();
+})();

@@ -1,5 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const dotenv = require("dotenv");
+
+// Load environment variables from .env file
+const env = dotenv.config().parsed;
+
+// Create an object with environment variables in stringified form
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
 module.exports = {
   mode: "development",
@@ -8,7 +19,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     watchFiles: ["src/**/*.html", "public/**/*"],
-    port: 3000,
+    port: 5000,
     hot: true,
   },
   plugins: [
@@ -18,6 +29,7 @@ module.exports = {
       filename: "index.html",
       inject: "body",
     }),
+    new webpack.DefinePlugin(envKeys),
   ],
   output: {
     filename: "[name].bundle.js",
@@ -45,6 +57,11 @@ module.exports = {
     ],
   },
   resolve: {
+    fallback: {
+      path: false,
+      os: false,
+      crypto: false,
+    },
     extensions: [".tsx", ".ts", ".js"],
   },
 };
