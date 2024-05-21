@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@types/jest": "^29.5.12",
+    "dotenv": "^16.4.5",
     "save-dev": "^0.0.1-security"
   }
 }
