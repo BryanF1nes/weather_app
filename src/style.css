@@ -41,3 +41,7 @@ h5 {
 small {
   font-size: 0.75rem; /* 12px */
 }
+
+.hidden {
+  display: none;
+}

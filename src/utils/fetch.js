@@ -5,20 +5,21 @@ export async function fetchCurrentData(search = "London") {
       `${process.env.BASE_URL}current.json?key=${key}&q=${search}&aqi=no`
     );
     const data = await response.json();
-    console.log(data.current);
+    // console.log(data.current);
     return data;
   } catch (err) {
     throw new Error(err);
   }
 }
 
-export async function fetchForecastData(search = "London", days = null) {
+export async function fetchForecastData(search = "London", days = 3) {
   try {
     const key = process.env.API_KEY;
     const response = await fetch(
       `${process.env.BASE_URL}forecast.json?key=${key}&q=${search}&days=${days}&aqi=no&alerts=no`
     );
-    const data = response.json();
+    const data = await response.json();
+    console.log(data.forecast);
     return data;
   } catch (err) {
     throw new Error(err);
