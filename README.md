@@ -14,7 +14,7 @@ out the app using only the `#root div` within my HTML template.
 
 ### Live site
 
-Live Preview will be integrated here -
+Live Preview will be integrated here - [Live Site](https://bryanf1nes.github.io/weather_app/)
 
 #### TODO:
 
@@ -23,6 +23,6 @@ Live Preview will be integrated here -
 - [x] Integrate 3, 5, and 7 Day forecast.
 - [x] Basic skeleton site using HTML.
 - [x] Flesh out skeleton site using JS.
-- [ ] Merge TDD fetching into site.
+- [x] Merge TDD fetching into site.
 
 #### Run locally
