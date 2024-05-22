@@ -20,6 +20,7 @@ Live Preview will be integrated here -
 
 - [x] Integrate TDD for fetching data to the `weather api`.
 - [x] Integrate TDD for any utility functions the APP may need.
+- [x] Integrate 3, 5, and 7 Day forecast.
 - [ ] Basic skeleton site using HTML.
 - [ ] Flesh out skeleton site using JS/TS.
 - [ ] Merge TDD fetching into site.
